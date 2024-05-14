@@ -1,6 +1,6 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
-const { getDefaultConfig } = require('expo/metro-config');
-const path = require('path');
+const { getDefaultConfig } = require("expo/metro-config");
+const path = require("path");
 
 const config = getDefaultConfig(__dirname);
 
@@ -9,20 +9,27 @@ const config = getDefaultConfig(__dirname);
 // excludes the one from the parent folder when bundling.
 config.resolver.blockList = [
   ...Array.from(config.resolver.blockList ?? []),
-  new RegExp(path.resolve('..', 'node_modules', 'react')),
-  new RegExp(path.resolve('..', 'node_modules', 'react-native')),
+  new RegExp(path.resolve("..", "node_modules", "react")),
+  new RegExp(path.resolve("..", "node_modules", "react-native")),
 ];
 
 config.resolver.nodeModulesPaths = [
-  path.resolve(__dirname, './node_modules'),
-  path.resolve(__dirname, '../node_modules'),
+  path.resolve(__dirname, "./node_modules"),
+  path.resolve(__dirname, "../node_modules"),
 ];
 
+// ----------------- add those lines to make assets work ----------------------
+const assetsPath = path.resolve(__dirname, "../src/assets");
+
 config.resolver.extraNodeModules = {
-  'rn-video': '..',
+  "rn-video": "..",
+  assets: assetsPath,
 };
 
-config.watchFolders = [path.resolve(__dirname, '..')];
+config.resolver.disableHierarchicalLookup = true;
+
+config.watchFolders = [path.resolve(__dirname, ".."), assetsPath];
+// ----------------------------------------------------------------------------
 
 config.transformer.getTransformOptions = async () => ({
   transform: {
@@ -30,5 +37,7 @@ config.transformer.getTransformOptions = async () => ({
     inlineRequires: true,
   },
 });
+
+console.log("config", config); // can be used to check the metro configuration
 
 module.exports = config;

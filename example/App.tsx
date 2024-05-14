@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
-
-import * as RnVideo from 'rn-video';
+import { StyleSheet, Text, View } from "react-native";
+import * as RnVideo from "rn-video";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>{RnVideo.hello()}</Text>
+
+      {/* COMPONENTS FROM RN-VIDEO PACKAGE */}
+      <RnVideo.LocalImage />
+      <RnVideo.WebImage />
+      {/* ------------------------------- */}
     </View>
   );
 }
@@ -13,8 +17,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
