@@ -14,7 +14,7 @@ export function LocalImage() {
         alignItems: "center",
       }}
     >
-      <Text style={{ color: "white" }}>Image from npm package assets</Text>
+      <Text style={{ color: "white" }}>Image from src/assets</Text>
       <Image
         style={{
           width: 200,
@@ -62,7 +62,7 @@ export function LocalVideo() {
         alignItems: "center",
       }}
     >
-      <Text style={{ color: "white" }}>Video from Web</Text>
+      <Text style={{ color: "white" }}>Video from src/assets </Text>
       <Video
         style={{
           width: 200,
