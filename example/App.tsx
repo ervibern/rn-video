@@ -9,6 +9,7 @@ export default function App() {
       {/* COMPONENTS FROM RN-VIDEO PACKAGE */}
       <RnVideo.LocalImage />
       <RnVideo.WebImage />
+      <RnVideo.LocalVideo />
       {/* ------------------------------- */}
     </View>
   );

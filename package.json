@@ -28,7 +28,9 @@
   "author": "ervibern <ervibern@gmail.com> ()",
   "license": "MIT",
   "homepage": "https://github.com/ervibern/rn-video#readme",
-  "dependencies": {},
+  "dependencies": {
+    "expo-av": "~14.0.4"
+  },
   "devDependencies": {
     "@types/react": "^18.0.25",
     "expo-module-scripts": "^3.5.1",

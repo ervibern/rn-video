@@ -1,3 +1,4 @@
+import { Video } from "expo-av";
 import React from "react";
 import { View, Image, Text } from "react-native";
 
@@ -46,6 +47,30 @@ export function WebImage() {
         source={{
           uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/SMPTE_Color_Bars.svg/1200px-SMPTE_Color_Bars.svg.png",
         }}
+      />
+    </View>
+  );
+}
+
+export function LocalVideo() {
+  return (
+    <View
+      style={{
+        width: 240,
+        height: 240,
+        backgroundColor: "green",
+        alignItems: "center",
+      }}
+    >
+      <Text style={{ color: "white" }}>Video from Web</Text>
+      <Video
+        style={{
+          width: 200,
+          height: 200,
+        }}
+        useNativeControls
+        isLooping
+        source={require("../assets/sample.mp4")}
       />
     </View>
   );

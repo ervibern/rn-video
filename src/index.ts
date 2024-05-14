@@ -10,7 +10,7 @@ import { ChangeEventPayload, RnVideoViewProps } from "./RnVideo.types";
 import RnVideoModule from "./RnVideoModule";
 import RnVideoView from "./RnVideoView";
 
-export { WebImage, LocalImage } from "./components/Images";
+export { WebImage, LocalImage, LocalVideo } from "./components/Images";
 
 // Get the native constant value.
 export const PI = RnVideoModule.PI;
